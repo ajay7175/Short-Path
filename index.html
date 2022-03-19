@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Planner</title>
+    <link rel="icon" href="./images/loc.jpg" type="image/icon type" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script
+      src="https://kit.fontawesome.com/5548f5ed00.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="https://use.fontawesome.com/daf23050ec.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-light"
+      style="
+        font-size: 25px;
+        font-family: sans-serif;
+        background-color: whitesmoke;
+      "
+    >
+      <img src="./images/logo2.png" class="logo" />
+      <div class="name">SHORT PATH</div>
+    </nav>
+    <div class="row" id="container">
+      <div class="col-lg-6" id="mynetwork"></div>
+
+      <div class="col-lg-6" id="container2">
+        <form name="myForm" id="myForm">
+          <div class="data row m-2">
+            <div class="col-lg-5">
+              <label for="start">Starting location</label>
+              <select class="form-control" name="start" id="start" required>
+                <option value="1" selected>-</option>
+                <option value="1">Bengaluru</option>
+                <option value="2">Mysuru</option>
+                <option value="3">Udupi</option>
+                <option value="4">Mangaluru</option>
+                <option value="5">Belagaum</option>
+                <option value="6">Hubli</option>
+                <option value="7">Hosapete</option>
+                <option value="8">Dharwad</option>
+                <option value="9">Karwar</option>
+                <option value="10">Bellary</option>
+                <option value="11">Shivamogga</option>
+                <option value="12">Bijapur</option>
+                <option value="12">Haveri</option>
+                <option value="13">Raichur</option>
+                <option value="14">Tumkur</option>
+                <option value="15">Bidar</option>
+                <option value="16">Gulbarga</option>
+                <option value="17">Chamarjanagar</option>
+                <option value="18">Kodagu</option>
+                <option value="19">Gadag</option>
+                <option value="20">Chitradurga</option>
+                <option value="21">Davangere</option>
+                <option value="22">Kolar</option>
+              </select>
+            </div>
+            <div class="col-lg-2 pl-1">
+            </div>
+            <div class="col-lg-5">
+              <label for="destination">Destination location</label>
+              <select
+                class="form-control"
+                name="destination"
+                id="destination"
+                required
+              >
+                <option value="23" selected>-</option>
+                <option value="1">Bengaluru</option>
+                <option value="2">Mysuru</option>
+                <option value="3">Udupi</option>
+                <option value="4">Mangaluru</option>
+                <option value="5">Belagaum</option>
+                <option value="6">Hubli</option>
+                <option value="7">Hosapete</option>
+                <option value="8">Dharwad</option>
+                <option value="9">Karwar</option>
+                <option value="10">Bellary</option>
+                <option value="11">Shivamogga</option>
+                <option value="12">Haveri</option>
+                <option value="13">Raichur</option>
+                <option value="14">Tumkur</option>
+                <option value="15">Bidar</option>
+                <option value="16">Gulbarga</option>
+                <option value="17">Chamarjanagar</option>
+                <option value="18">Kodagu</option>
+                <option value="19">Gadag</option>
+                <option value="20">Chitradurga</option>
+                <option value="21">Davangere</option>
+                <option value="22">Kolar</option>
+
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn btn-success" id="solve">
+            Proceed
+          </button>
+        </form>
+
+        <span
+          class="m-2"
+          id="temptext2"
+          style="width: 100%; text-align: center; font-size: x-large"
+        >
+        </span>
+        <!-- <span id="temptext" style="width: 100%; text-align: center; font-size: x-large">
+                Red link represents bus travel time : <i class="fa fa-bus" aria-hidden="true" style="color: orange"></i><br>
+                Green link represents flight travel time : <i class="fa fa-plane" aria-hidden="true" style="color: green"></i><br>
+                Click on solve to get Solution !!
+            </span> -->
+        <div id="mynetwork2" style="display: none"></div>
+      </div>
+      <div class="but row">
+        <div class="col-lg-12 m-2">
+          <button type="button" class="btn btn-info" id="generate-graph">
+            Get New Graph
+          </button>
+        </div>
+        <div class="col-lg-12 m-2">
+          <button
+            type="button"
+            style="display: none"
+            class="btn btn-warning"
+            id="newLocation"
+          >
+            Choose different location
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
